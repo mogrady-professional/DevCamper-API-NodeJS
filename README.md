@@ -23,6 +23,7 @@
   - [Deployment (Digital Ocean)](#deployment-digital-ocean)
   - [Code Related Suggestions](#code-related-suggestions)
   - [Project Details](#project-details)
+    - [Route Structure](#route-structure)
     - [Packages and Installs (playground)](#packages-and-installs-playground-1)
 
 # Introduction
@@ -213,6 +214,21 @@ Create the backend for a bootcamp directory website. The frontend/UI will be cre
 - Create a database seeder to import and destroy data
 
 ## Project Details
+
+### Route Structure
+
+- GET
+- POST
+- PUT
+- DELETE
+
+```
+/api/v1/bootcamps
+/api/v1/courses
+/api/v1/reviews
+/api/v1/auth
+/api/v1/users
+```
 
 ### Packages and Installs (playground)
 
