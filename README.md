@@ -6,13 +6,13 @@
 
 - [DevCamper-API-NodeJS](#devcamper-api-nodejs)
 - [Table of Contents](#table-of-contents)
-- [Packages and Installs](#packages-and-installs)
 - [Introduction](#introduction)
+  - [Packages and Installs (playground)](#packages-and-installs-playground)
   - [What is HTTP?](#what-is-http)
 - [Important Points](#important-points)
-- [Import HTTP Status Codes](#import-http-status-codes)
-- [HTTP Request Methods](#http-request-methods)
-- [RESTFUL API Standards](#restful-api-standards)
+  - [Import HTTP Status Codes](#import-http-status-codes)
+  - [HTTP Request Methods](#http-request-methods)
+  - [RESTFUL API Standards](#restful-api-standards)
 - [DevCamper Backend API Specifications](#devcamper-backend-api-specifications)
     - [Bootcamps](#bootcamps)
     - [Courses](#courses)
@@ -22,14 +22,16 @@
   - [Documentation](#documentation)
   - [Deployment (Digital Ocean)](#deployment-digital-ocean)
   - [Code Related Suggestions](#code-related-suggestions)
+  - [Project Details](#project-details)
+    - [Packages and Installs (playground)](#packages-and-installs-playground-1)
 
-# Packages and Installs
+# Introduction
+
+## Packages and Installs (playground)
 
 - Create a Package.json file `npm init`
 - nodemon `npm i nodemon -D`
 - Create start script in package.json `"start": "nodemon server.js"`
-
-# Introduction
 
 ## What is HTTP?
 
@@ -49,7 +51,7 @@
 res.writeHead(200, { 'Content-Type': 'text/html' });
 ```
 
-# Import HTTP Status Codes
+## Import HTTP Status Codes
 
 - 1.xx Informational
 - 2.xx Success
@@ -67,14 +69,14 @@ res.writeHead(200, { 'Content-Type': 'text/html' });
 
 > MDN Docs - [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
-# HTTP Request Methods
+## HTTP Request Methods
 
 - GET - Retrieve Resource
 - POST - Submit Resource
 - PUT/PATCH - Update Resource
 - DELETE - Delete/Destroy Resource
 
-# RESTFUL API Standards
+## RESTFUL API Standards
 
 - GET /todos - Get all todos
 - GET /todos/:id - Get single todo
@@ -209,3 +211,11 @@ Create the backend for a bootcamp directory website. The frontend/UI will be cre
 - Validation using Mongoose and no external libraries
 - Use async/await (create middleware to clean up controller methods)
 - Create a database seeder to import and destroy data
+
+## Project Details
+
+### Packages and Installs (playground)
+
+- `npm init -y`
+- `npm i express dotenv`
+- `npm i -D nodemon`
