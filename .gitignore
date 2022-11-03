@@ -105,4 +105,7 @@ dist
 
 /config/config.env
 Secrets.md
-/models
+# /models/Bootcamp
+/models/Course
+/models/Review
+/models/User

@@ -5,15 +5,16 @@ const colors = require('colors'); // Import colors
 // const logger = require('./middleware/logger'); // Import logger middleware
 // Morgan HTTP request logger middleware for node.js
 const morgan = require('morgan'); // Import morgan
+const errorHandler = require('./middleware/error'); // Import error handler middleware
 const connectDB = require('./config/db'); // Import connectDB
 
-// Route files
+// Load Route files
 const bootcamps = require('./routes/bootcamps');
+
+const app = express(); // Create express app
 
 // Load env vars
 dotenv.config({ path: './config/config.env' });
-
-const app = express(); // Create express app
 
 // Connect to database
 connectDB();
@@ -30,6 +31,9 @@ app.use(express.json());
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
 
+// Use Error Handler Middleware
+app.use(errorHandler);
+
 const PORT = process.env.PORT || 5000;
 
 // Run server
@@ -42,7 +46,7 @@ const server = app.listen(process.env.PORT, () => {
 
   // Handle unhandled promise rejections
   process.on('unhandledRejection', (err, promise) => {
-    console.log(`Error: ${err.message}`.red);
+    console.log(`Error: ${err.message}`.red.bold.underline);
     // Close server & exit process
     server.close(() => process.exit(1)); // 1 = exit with failure
   });
