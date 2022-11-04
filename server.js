@@ -8,13 +8,13 @@ const morgan = require('morgan'); // Import morgan
 const errorHandler = require('./middleware/error'); // Import error handler middleware
 const connectDB = require('./config/db'); // Import connectDB
 
+// Load env vars
+dotenv.config({ path: './config/config.env' });
+
 // Load Route files
 const bootcamps = require('./routes/bootcamps');
 
 const app = express(); // Create express app
-
-// Load env vars
-dotenv.config({ path: './config/config.env' });
 
 // Connect to database
 connectDB();

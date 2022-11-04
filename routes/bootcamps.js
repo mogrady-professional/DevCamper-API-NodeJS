@@ -6,7 +6,10 @@ const {
   createBootcamp,
   updateBootcamp,
   deleteBootcamp,
+  getBootcampsInRadius,
 } = require('../controllers/bootcamps'); // Import bootcamps controller
+
+router.route('/radius/:zipcode/:distance').get(getBootcampsInRadius); // Get bootcamps within a radius
 
 router.route('/').get(getBootcamps).post(createBootcamp); // Create routes for get all bootcamps and create new bootcamp
 router
