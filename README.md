@@ -1,6 +1,8 @@
 # DevCamper-API-NodeJS
 
-> Backend API for DevCamper application, which is a bootcamp directory website
+> Backend REST API for DevCamper application, which is a bootcamp directory website and MongoDB, Express, NodeJS, and some other packages.
+
+- MongoDB API's w/ database queries
 
 # Table of Contents
 
