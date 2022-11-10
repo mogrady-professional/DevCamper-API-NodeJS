@@ -3,6 +3,7 @@
 > Backend REST API for DevCamper application, which is a bootcamp directory website and MongoDB, Express, NodeJS, and some other packages.
 
 - MongoDB API's w/ database queries
+- User can only create a only a single bootcamp ( Admins can create multiple bootcamps )
 
 # Table of Contents
 
