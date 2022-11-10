@@ -13,7 +13,7 @@
         "type": "git",
         "url": "git+https://github.com/mogrady-professional/DevCamper-API-NodeJS.git"
     },
-    "author": "Michael O Gradt",
+    "author": "Michael O Grady",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/mogrady-professional/DevCamper-API-NodeJS/issues"

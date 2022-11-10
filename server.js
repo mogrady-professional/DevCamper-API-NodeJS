@@ -45,6 +45,9 @@ app.use('/api/v1/bootcamps', bootcamps);
 app.use('/api/v1/courses', courses);
 app.use('/api/v1/auth', auth);
 
+// Cookie parser
+app.use(cookieParser());
+
 // Use Error Handler Middleware
 app.use(errorHandler);
 
