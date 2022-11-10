@@ -58,6 +58,9 @@ UserSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
+// Node crypto module to generate random token
+// https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback
+
 // Generate and hash password token
 UserSchema.methods.getResetPasswordToken = function () {
   // Generate token

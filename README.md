@@ -4,6 +4,7 @@
 
 - MongoDB API's w/ database queries
 - User can only create a only a single bootcamp ( Admins can create multiple bootcamps )
+- NodeMailer for sending emails [nodemailer](https://www.npmjs.com/package/nodemailer)
 
 # Table of Contents
 
