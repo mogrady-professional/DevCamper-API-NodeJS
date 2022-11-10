@@ -3,6 +3,7 @@ const express = require('express'); // Import express
 const dotenv = require('dotenv'); // Import dotenv
 const colors = require('colors'); // Import colors
 const fileupload = require('express-fileupload'); // Import express-fileupload
+const cookieParser = require('cookie-parser'); // Import cookie-parser
 // Custom Logger
 // const logger = require('./middleware/logger'); // Import logger middleware
 // Morgan HTTP request logger middleware for node.js
