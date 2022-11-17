@@ -4,6 +4,7 @@ const dotenv = require('dotenv'); // Import dotenv
 const colors = require('colors'); // Import colors
 const fileupload = require('express-fileupload'); // Import express-fileupload
 const cookieParser = require('cookie-parser'); // Import cookie-parser
+const mongoSanitize = require('express-mongo-sanitize');
 // Custom Logger
 // const logger = require('./middleware/logger'); // Import logger middleware
 // Morgan HTTP request logger middleware for node.js
@@ -37,6 +38,9 @@ app.use(express.json());
 
 // File uploading
 app.use(fileupload());
+
+// Sanitize data
+app.use(mongoSanitize()); // Prevent NoSQL injection
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));

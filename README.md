@@ -6,6 +6,7 @@
 - User can only create a only a single bootcamp ( Admins can create multiple bootcamps )
 - NodeMailer for sending emails [nodemailer](https://www.npmjs.com/package/nodemailer)
 - Authentication with JWT using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) with cookies
+- SQL injection prevention with [express-mongo-sanitize](https://www.npmjs.com/package/express-mongo-sanitize)
 
 # Table of Contents
 
@@ -30,6 +31,10 @@
   - [Project Details](#project-details)
     - [Route Structure](#route-structure)
     - [Packages and Installs (playground)](#packages-and-installs-playground-1)
+- [Points to Note](#points-to-note)
+  - [Preventing NoSQL Injection & Sanitizing Data](#preventing-nosql-injection--sanitizing-data)
+  - [Before](#before)
+  - [After](#after)
 
 # Introduction
 
@@ -240,3 +245,36 @@ Create the backend for a bootcamp directory website. The frontend/UI will be cre
 - `npm init -y`
 - `npm i express dotenv`
 - `npm i -D nodemon`
+
+# Points to Note
+
+## Preventing NoSQL Injection & Sanitizing Data
+
+- [Hacking NodeJS and MongoDB](https://blog.websecurify.com/2014/08/hacking-nodejs-and-mongodb)
+
+> The request to exploit this vulnerability will look more or less like the one below.
+
+```json
+{
+  "email": { "$gt": "" },
+  "password": "123456"
+}
+```
+
+External Packages to Prevent NoSQL Injection
+
+- [mongo-sanitize](https://www.npmjs.com/package/mongo-sanitize)
+- [⭐ express-mongo-sanitize](https://www.npmjs.com/package/express-mongo-sanitize)
+- [Mongoose Sanitization](https://mongoosejs.com/docs/api.html#document_Document-toJSON)
+
+## Before
+
+<p align="center">
+<img src="images/sql-inj.png"  height="auto" width="100%"> 
+</p>
+
+## After
+
+<p align="center">
+<img src="images/sql-inj-after.png"  height="auto" width="100%"> 
+</p>
