@@ -5,6 +5,7 @@
 - MongoDB API's w/ database queries
 - User can only create a only a single bootcamp ( Admins can create multiple bootcamps )
 - NodeMailer for sending emails [nodemailer](https://www.npmjs.com/package/nodemailer)
+- Authentication with JWT using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) with cookies
 
 # Table of Contents
 

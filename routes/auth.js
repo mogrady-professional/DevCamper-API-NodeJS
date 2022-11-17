@@ -2,6 +2,7 @@ const express = require('express'); // Import express
 const {
   register,
   login,
+  logout,
   getMe,
   forgotPassword,
   resetPassword,
@@ -14,6 +15,7 @@ const router = express.Router(); // Create a router
 
 router.post('/register', register); // POST /api/v1/auth/register
 router.post('/login', login); // POST /api/v1/auth/login
+router.get('/logout', logout); // GET /api/v1/auth/logout
 router.get('/me', protect, getMe); // GET /api/v1/auth/me
 router.post('/forgotpassword', forgotPassword); // POST /api/v1/auth/forgotpassword
 router.put('/updatepassword', protect, updatePassword); // PUT /api/v1/auth/updatepassword
