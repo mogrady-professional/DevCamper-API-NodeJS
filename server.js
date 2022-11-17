@@ -4,6 +4,11 @@ const dotenv = require('dotenv'); // Import dotenv
 const colors = require('colors'); // Import colors
 const fileupload = require('express-fileupload'); // Import express-fileupload
 const cookieParser = require('cookie-parser'); // Import cookie-parser
+const helmet = require('helmet'); // Import helmet
+const xss = require('xss-clean'); // Import xss-clean
+const cors = require('cors'); // Import cors
+const rateLimit = require('express-rate-limit'); // Import express-rate-limit
+const hpp = require('hpp'); // Import hpp
 const mongoSanitize = require('express-mongo-sanitize');
 // Custom Logger
 // const logger = require('./middleware/logger'); // Import logger middleware
@@ -41,6 +46,26 @@ app.use(fileupload());
 
 // Sanitize data
 app.use(mongoSanitize()); // Prevent NoSQL injection
+
+// Set security headers
+app.use(helmet()); // Set security headers
+
+// Prevent XSS attacks
+app.use(xss()); // Prevent XSS attacks
+
+// Rate limiting
+// https://www.npmjs.com/package/express-rate-limit
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000, // 10 mins
+  max: 100,
+});
+app.use(limiter); // Prevent brute force attacks
+
+// Prevent http param pollution
+app.use(hpp()); // Prevent http param pollution
+
+// Enable CORS
+app.use(cors());
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));

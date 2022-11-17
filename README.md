@@ -1,12 +1,16 @@
 # DevCamper-API-NodeJS
 
-> Backend REST API for DevCamper application, which is a bootcamp directory website and MongoDB, Express, NodeJS, and some other packages.
+> Backend REST API for DevCamper application, which is a bootcamp directory website and MongoDB, Express, NodeJS, and some other packages and is a public application.
 
 - MongoDB API's w/ database queries
 - User can only create a only a single bootcamp ( Admins can create multiple bootcamps )
 - NodeMailer for sending emails [nodemailer](https://www.npmjs.com/package/nodemailer)
 - Authentication with JWT using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) with cookies
 - SQL injection prevention with [express-mongo-sanitize](https://www.npmjs.com/package/express-mongo-sanitize)
+- HTTP Headers added using [helmetjs](https://helmetjs.github.io/)
+- [xss-clean](https://www.npmjs.com/package/xss-clean) for XSS prevention to sanitize user input coming from POST body, GET queries, and url params
+- [express-rate-limit](https://www.npmjs.com/package/express-rate-limit) for rate limiting
+- [hpp](https://www.npmjs.com/package/hpp) for HTTP Parameter Pollution
 
 # Table of Contents
 
@@ -33,8 +37,15 @@
     - [Packages and Installs (playground)](#packages-and-installs-playground-1)
 - [Points to Note](#points-to-note)
   - [Preventing NoSQL Injection & Sanitizing Data](#preventing-nosql-injection--sanitizing-data)
-  - [Before](#before)
-  - [After](#after)
+    - [Before](#before)
+    - [After](#after)
+  - [XSS Protection and Security Headers](#xss-protection-and-security-headers)
+    - [Before](#before-1)
+    - [After](#after-1)
+    - [Before](#before-2)
+    - [After](#after-2)
+- [Rate Limiting](#rate-limiting)
+- [HPP](#hpp)
 
 # Introduction
 
@@ -267,14 +278,55 @@ External Packages to Prevent NoSQL Injection
 - [⭐ express-mongo-sanitize](https://www.npmjs.com/package/express-mongo-sanitize)
 - [Mongoose Sanitization](https://mongoosejs.com/docs/api.html#document_Document-toJSON)
 
-## Before
+### Before
 
 <p align="center">
 <img src="images/sql-inj.png"  height="auto" width="100%"> 
 </p>
 
-## After
+### After
 
 <p align="center">
 <img src="images/sql-inj-after.png"  height="auto" width="100%"> 
 </p>
+
+## XSS Protection and Security Headers
+
+- [⭐ HelmetJS](https://helmetjs.github.io/)
+
+### Before
+
+<p align="center">
+<img src="images/before-headers.png"  height="auto" width="100%"> 
+</p>
+
+### After
+
+<p align="center">
+<img src="images/after-headers.png"  height="auto" width="100%"> 
+</p>
+
+[xss-clean](https://www.npmjs.com/package/xss-clean) for XSS prevention
+
+### Before
+
+<p align="center">
+<img src="images/xss-example-before.png"  height="auto" width="100%"> 
+</p>
+
+### After
+
+<p align="center">
+<img src="images/xss-example-after.png"  height="auto" width="100%"> 
+</p>
+
+# Rate Limiting
+
+- [express-rate-limit](https://www.npmjs.com/package/express-rate-limit) for rate limiting
+
+# HPP
+
+- [hpp](https://www.npmjs.com/package/hpp) for HTTP Parameter Pollution
+- <p align="center">
+  <img src="images/rate-limit.png"  height="auto" width="100%"> 
+  </p>
