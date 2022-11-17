@@ -14,12 +14,14 @@ const advancedResults = require('../middleware/advancedResults'); // Import adva
 
 // Include other resource routers
 const courseRouter = require('./courses'); // Import courses router
+const reviewRouter = require('./reviews'); // Import reviews router
 const router = express.Router(); // Create router
 
 const { protect, authorize } = require('../middleware/auth'); // Import protect middleware
 
 // Re-route into other resource routers
 router.use('/:bootcampId/courses', courseRouter); // Use courses router
+router.use('/:bootcampId/reviews', reviewRouter); // Use reviews router
 
 router.route('/radius/:zipcode/:distance').get(getBootcampsInRadius); // Get bootcamps within a radius
 
