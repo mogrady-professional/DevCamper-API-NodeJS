@@ -11,6 +11,8 @@
 - [xss-clean](https://www.npmjs.com/package/xss-clean) for XSS prevention to sanitize user input coming from POST body, GET queries, and url params
 - [express-rate-limit](https://www.npmjs.com/package/express-rate-limit) for rate limiting
 - [hpp](https://www.npmjs.com/package/hpp) for HTTP Parameter Pollution
+- [cors](https://www.npmjs.com/package/cors) for Cross-Origin Resource Sharing
+- HTML Documentation with [docgen](https://github.com/thedevsaddam/docgen)
 
 # Table of Contents
 
@@ -46,6 +48,7 @@
     - [After](#after-2)
 - [Rate Limiting](#rate-limiting)
 - [HPP](#hpp)
+- [Complete Package Listing](#complete-package-listing)
 
 # Introduction
 
@@ -330,3 +333,28 @@ External Packages to Prevent NoSQL Injection
 - <p align="center">
   <img src="images/rate-limit.png"  height="auto" width="100%"> 
   </p>
+
+# Complete Package Listing
+
+```
+├── bcryptjs@2.4.3
+├── colors@1.4.0
+├── cookie-parser@1.4.6
+├── cors@2.8.5
+├── dotenv@16.0.3
+├── express-fileupload@1.4.0
+├── express-mongo-sanitize@2.2.0
+├── express-rate-limit@6.7.0
+├── express@4.18.2
+├── geocoder@0.2.3
+├── helmet@6.0.0
+├── hpp@0.2.3
+├── jsonwebtoken@8.5.1
+├── mongoose@6.7.1
+├── morgan@1.10.0
+├── node-geocoder@4.2.0
+├── nodemailer@6.8.0
+├── nodemon@2.0.20
+├── slugify@1.6.5
+└── xss-clean@0.1.1
+```
